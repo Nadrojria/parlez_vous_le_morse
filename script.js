@@ -58,7 +58,7 @@ const morseToLatin = {
 
 function getLatinCharacterList (text) {
     let result = text.split("");
-    console.log(result);
+    return result;
 }
 
 function translateLatinCharacter (character) {
@@ -69,5 +69,12 @@ function translateLatinCharacter (character) {
     }
 }
 
-getLatinCharacterList("Hello, world");
-translateLatinCharacter("o");
+function encode (text) {
+    let wordsInLetters = getLatinCharacterList(text);
+    for (const elem of wordsInLetters) {
+        translateLatinCharacter(elem);
+    }
+}
+
+encode("Hello, world");
+
