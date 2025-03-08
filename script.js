@@ -57,24 +57,50 @@ const morseToLatin = {
 }
 
 function getLatinCharacterList (text) {
-    let result = text.split("");
-    return result;
+    return text.split("");
 }
 
-function translateLatinCharacter (character) {
+function translateLatinCharacter (textCharacter) {
     for (const property in latinToMorse) {
-        if (property == character.toUpperCase()) {
-            console.log(latinToMorse[property]);
+        if (property == textCharacter.toUpperCase()) {
+            return latinToMorse[property];
         }
     }
+    return "/";
 }
 
 function encode (text) {
-    let wordsInLetters = getLatinCharacterList(text);
-    for (const elem of wordsInLetters) {
-        translateLatinCharacter(elem);
+    let lettersInArray = getLatinCharacterList(text);
+    let result = "";
+    for (const elem of lettersInArray) {
+        result += `${translateLatinCharacter(elem)} `;
     }
+    console.log(result);
 }
 
+function getMorseCharacterList (morse) {
+    return morse.split(" "); // on met un espace en 'séparator' car chaque lettre morse est séparé par un espace
+}
+
+function translateMorseCharacter (morseCharacter) {
+    for (const property in morseToLatin) {
+        if (property == morseCharacter) {
+           return morseToLatin[property];         
+        } 
+    }
+    return " "; // renvoi un espace si un character est non existant dans le dico (ex : le "/")
+}
+
+function decode (morse) {
+    let morseInArray = getMorseCharacterList(morse);
+    let result = "";
+    for (const elem of morseInArray) {
+        result += translateMorseCharacter(elem);
+    }
+    console.log(result);
+}
+
+
+decode(".... . .-.. .-.. --- / .-- --- .-. .-.. -..");
 encode("Hello, world");
 
