@@ -6,21 +6,24 @@
     <title>Parlez-vous le morse ?</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Joti+One&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1>Parlez-vous le morse ?</h1>
     <hr>
     <div>
         <label for="latin-to-morse">Ecris en lettres</label>
-        <input type="text" id="latin-to-morse">
+        <input type="text" id="latin-to-morse" class="input">
         <button id="valid-to-morse">Traduis en morse</button>
-        <p id="latin-translated"></p>
+        <p id="latin-translated" class="translated"></p>
     </div>
     <div>
         <label for="morse-to-latin">Ecris en morse</label>
-        <input type="text" id="morse-to-latin">
+        <input type="text" id="morse-to-latin" class="input">
         <button id="valid-to-latin">Traduis en lettres</button>
-        <p id="morse-translated">Pour écrire en morse, fais des espaces entre les caractères et utilise le "/" entre chaque mot</p>
+        <p id="morse-translated" class="translated"><em>Pour écrire en morse, fais des espaces entre les caractères et utilise le "/" entre chaque mot</em></p>
     </div>
 </body>
 </html>

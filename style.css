@@ -1,3 +1,42 @@
+.joti-one-regular {
+    font-family: "Joti One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+    
+
+body {
+    font-family: "Joti One", serif;
+    background-image: url(photo-1697179426879-f9d536826c21.avif);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
 h1 {
     text-align: center;
+}
+
+.translated {
+    font-size: larger;
+}
+
+label {
+    font-size: larger;
+}
+
+.input {
+    font-size: larger;
+    border-radius: 8px;
+}
+
+button {
+    cursor: pointer;
+    font-size: larger;
+    border-radius:5px;
+    background-color: rgb(199, 238, 225);
+}
+
+button:hover {
+    background-color: rgb(160, 230, 230);
 }

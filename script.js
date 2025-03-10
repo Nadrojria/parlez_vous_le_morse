@@ -62,6 +62,8 @@ const morseToLatin = {
 **********************/
 const validToMorse = document.getElementById('valid-to-morse');
 const validToLatin = document.getElementById('valid-to-latin');
+const latinTranslated = document.getElementById('latin-translated');
+const morseTranslated = document.getElementById('morse-translated');
 
 /*****Latin to Morse****
 ***********************/
@@ -84,13 +86,13 @@ function encode (text) {
     for (const elem of lettersInArray) {
         result += `${translateLatinCharacter(elem)} `;
     }
-    console.log(result);
+    return result;
 }
 
 /*****Morse to Latin*****
 *************************/
 function getMorseCharacterList (morse) {
-    return morse.split(" "); // on met un espace en 'séparator' car chaque lettre morse est séparé par un espace
+    return morse.split(" "); // on met un espace en 'séparator' car chaque caractère morse est séparé par un espace
 }
 
 function translateMorseCharacter (morseCharacter) {
@@ -108,13 +110,21 @@ function decode (morse) {
     for (const elem of morseInArray) {
         result += translateMorseCharacter(elem);
     }
-    console.log(result);
+    return result;
 }
 
 /********START*********
 ***********************/
-validToMorse.addEventListener("submit", () => {
-    
+validToMorse.addEventListener("click", () => {
+    const latinText = document.getElementById('latin-to-morse').value;
+    let latinTranslate = encode(latinText);
+    latinTranslated.innerText = latinTranslate;
+})
+
+validToLatin.addEventListener("click", () => {
+    const morseText = document.getElementById('morse-to-latin').value;
+    let morseTranslate = decode(morseText);
+    morseTranslated.innerText = morseTranslate;
 })
 
 // decode(".... . .-.. .-.. --- / .-- --- .-. .-.. -..");
