@@ -1,3 +1,5 @@
+/*****Dictionary*****
+************************/
 const latinToMorse = {
 	'A':'.-',
 	'B':'-...',
@@ -56,6 +58,13 @@ const morseToLatin = {
     '....': "H"
 }
 
+/*****RECUP HTML******
+**********************/
+const validToMorse = document.getElementById('valid-to-morse');
+const validToLatin = document.getElementById('valid-to-latin');
+
+/*****Latin to Morse****
+***********************/
 function getLatinCharacterList (text) {
     return text.split("");
 }
@@ -78,6 +87,8 @@ function encode (text) {
     console.log(result);
 }
 
+/*****Morse to Latin*****
+*************************/
 function getMorseCharacterList (morse) {
     return morse.split(" "); // on met un espace en 'séparator' car chaque lettre morse est séparé par un espace
 }
@@ -100,7 +111,12 @@ function decode (morse) {
     console.log(result);
 }
 
+/********START*********
+***********************/
+validToMorse.addEventListener("submit", () => {
+    
+})
 
-decode(".... . .-.. .-.. --- / .-- --- .-. .-.. -..");
-encode("Hello, world");
+// decode(".... . .-.. .-.. --- / .-- --- .-. .-.. -..");
+// encode("Hello, world");
 
